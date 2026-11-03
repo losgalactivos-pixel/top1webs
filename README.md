@@ -45,9 +45,9 @@ El número de WhatsApp (34691293667) y el mensaje inicial se han tomado del cód
 Con `mostrarAvisosEditables: true` (en `js/config.js`) la web muestra etiquetas amarillas «✎» junto a todo lo que es una propuesta o un ejemplo:
 
 - **Precios de Pro (450 €) y Premium (650 €)**: son propuestas. El único precio real es el base, 300 €.
-- **Precios de la calculadora** (40 € por página, 30–80 € por extra, incluidos la carta con QR y el posicionamiento básico en Google, 60 € por idioma): propuestas.
+- **Precios de la calculadora** (40 € por página, 30–80 € por extra, incluida la carta con QR, 60 € por idioma): propuestas.
 - **¿IVA incluido?** Indíquelo en la nota bajo los planes.
-- **Preguntas frecuentes**: redactadas con prudencia (mantenimiento, dominio, edición por el cliente). Ajústelas a cómo trabaja.
+- **Preguntas frecuentes**: redactadas con prudencia. Ajústelas a cómo trabaja.
 - **Portafolio y comparador**: muestran la web de Bar La Tasca. En el comparador, la web «antes» es una recreación genérica de una web anticuada (así se indica en la web).
 
 Ahora está en `false` (versión publicada). Póngalo en `true` para volver a ver las etiquetas al revisar.
