@@ -95,7 +95,6 @@ window.TOP1 = {
     { texto: "Formulario de reservas o citas", basico: false, pro: false, premium: true },
     { texto: "Segundo idioma", basico: false, pro: false, premium: true },
     { texto: "Carta o catálogo digital con QR", basico: "Extra", pro: "Extra", premium: true },
-    { texto: "Posicionamiento básico en Google", basico: "Extra", pro: "Extra", premium: "Extra" },
     { texto: "Web de prueba sin compromiso", basico: true, pro: true, premium: true },
     { texto: "Plazo de entrega", basico: "Hasta 3 días", pro: "Hasta 3 días", premium: "Hasta 3 días" },
     { texto: "Forma de pago", basico: "Pago único", pro: "Pago único", premium: "Pago único" }
@@ -115,8 +114,7 @@ window.TOP1 = {
       { id: "formulario", nombre: "Formulario de contacto", descripcion: "Para que le escriban desde la web.", precio: 30 },
       { id: "galeria", nombre: "Galería de fotos", descripcion: "Su local, sus productos o sus trabajos.", precio: 30 },
       { id: "reservas", nombre: "Reservas o citas", descripcion: "Formulario para pedir mesa, cita o turno.", precio: 80 },
-      { id: "qr", nombre: "Carta o catálogo con código QR", descripcion: "Su carta, catálogo o lista de precios en el móvil, con un QR para imprimir.", precio: 40 },
-      { id: "seo", nombre: "Posicionamiento básico en Google", descripcion: "Títulos, descripciones y alta en Google para que le encuentren mejor.", precio: 50 }
+      { id: "qr", nombre: "Carta o catálogo con código QR", descripcion: "Su carta, catálogo o lista de precios en el móvil, con un QR para imprimir.", precio: 40 }
     ]
   },
 
