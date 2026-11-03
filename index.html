@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Top1webs · Webs a medida, profesionales y con personalidad</title>
+  <meta name="description" content="Diseño web a medida para negocios y empresas. Le preparamos su web de prueba sin compromiso: lista en un máximo de 3 días y desde 300 €, pago único. Si no le convence, no pasa nada.">
+  <meta name="theme-color" content="#0d1d3a">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Top1webs · Webs a medida, profesionales y con personalidad">
+  <meta property="og:description" content="Le preparamos su web de prueba sin compromiso. Lista en un máximo de 3 días, desde 300 €.">
+  <!-- Cuando publique la web, cambie esta ruta por la dirección completa, p. ej. https://www.top1webs.es/assets/img/tarjeta-frontal.webp -->
+  <meta property="og:image" content="https://losgalactivos-pixel.github.io/top1webs/assets/img/tarjeta-frontal.webp">
+  <meta property="og:url" content="https://losgalactivos-pixel.github.io/top1webs/">
+
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/img/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/logo.webp" type="image/webp">
+  <link rel="preload" as="image" href="assets/img/logo-palabra.webp" type="image/webp">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script>
+    /* Animación del logo al abrir: una vez por sesión y nunca con "reducir movimiento" */
+    (function () {
+      var d = document.documentElement, seen = false;
+      d.classList.add("js");
+      try { seen = sessionStorage.getItem("t1-intro") === "1"; } catch (e) {}
+      if (seen || (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+      try { sessionStorage.setItem("t1-intro", "1"); } catch (e) {}
+      d.classList.add("intro-active", "intro-hold");
+      setTimeout(function () { d.classList.remove("intro-hold"); }, 2450);
+      setTimeout(function () { d.classList.remove("intro-active"); }, 3300);
+    })();
+  </script>
+  <script src="js/config.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- Animación del logotipo al abrir la web (se oculta sola; clic o tecla para saltarla) -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro-logo">
+      <svg class="intro-star" viewBox="-6 -8 130 110">
+        <defs>
+          <linearGradient id="intro-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#47c6ff"/><stop offset="1" stop-color="#2b55ff"/></linearGradient>
+          <linearGradient id="intro-grad-small" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5fd2ff"/><stop offset="1" stop-color="#2fa8ff"/></linearGradient>
+        </defs>
+        <polygon class="intro-big" pathLength="100" points="50,4 63.5,33.4 95.7,37.2 71.9,59.1 78.2,90.8 50,75 21.8,90.8 28.1,59.1 4.3,37.2 36.5,33.4"/>
+        <polygon class="intro-small" points="104,-1 107.6,7 116.4,8 109.9,13.9 111.6,22.5 104,18.2 96.4,22.5 98.1,13.9 91.6,8 100.4,7"/>
+      </svg>
+      <div class="intro-word">
+        <span class="intro-wordmark"><img src="assets/img/logo-palabra.webp" width="762" height="160" alt=""></span>
+        <span class="intro-rule"></span>
+        <span class="intro-tag">Diseño · Presencia · Resultados</span>
+        <span class="intro-bar"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Iconos reutilizables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></g></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.42.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-dash" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M7 12h10"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-pencil" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></g></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></g></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></g></symbol>
+    <symbol id="i-lr" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M9 6 3 12l6 6M15 6l6 6-6 6"/></symbol>
+    <symbol id="i-star" viewBox="0 0 100 100"><polygon points="50,4 63.5,33.4 95.7,37.2 71.9,59.1 78.2,90.8 50,75 21.8,90.8 28.1,59.1 4.3,37.2 36.5,33.4"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- ===================== CABECERA ===================== -->
+  <header class="site-header" id="cabecera">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Top1webs, ir al inicio">
+        <img src="assets/img/logo.webp" alt="Top1webs" width="223" height="38">
+      </a>
+      <nav class="nav" id="menu" aria-label="Principal">
+        <ul class="nav-list">
+          <li><a href="#planes">Planes</a></li>
+          <li><a href="#proceso">Cómo trabajamos</a></li>
+          <li><a href="#calculadora">Presupuesto</a></li>
+          <li><a href="#portafolio">Trabajos</a></li>
+          <li><a href="#faq">Preguntas</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a class="nav-phone" href="tel:+34691293667" data-tel><svg class="icon"><use href="#i-phone"/></svg><span data-tel-text>691 29 36 67</span></a>
+          <a class="btn btn-primary btn-sm" href="#pide-tu-web">Pide tu web</a>
+        </div>
+      </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="sr-only">Menú</span><span class="menu-bars" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ===================== 1. PORTADA ===================== -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <svg class="hero-star" viewBox="0 0 100 100" aria-hidden="true">
+        <defs><linearGradient id="star-soft" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dcebff"/><stop offset="1" stop-color="#e4e3ff"/></linearGradient></defs>
+        <polygon points="50,4 63.5,33.4 95.7,37.2 71.9,59.1 78.2,90.8 50,75 21.8,90.8 28.1,59.1 4.3,37.2 36.5,33.4" fill="none" stroke="url(#star-soft)" stroke-width="5"/>
+      </svg>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow anim" style="--d:0">Diseño web para su negocio</p>
+          <h1 class="hero-title" id="hero-title">
+            <span class="line anim" style="--d:1">Webs a medida,</span>
+            <span class="line anim" style="--d:2">profesionales y</span>
+            <span class="line accent anim" style="--d:3">con personalidad.</span>
+          </h1>
+          <p class="hero-lead anim" style="--d:4">Le preparamos la web de su negocio <strong>como prueba, sin ningún compromiso</strong>. Si le gusta, llegamos a un acuerdo. Si no le convence, no pasa nada.</p>
+          <div class="hero-actions anim" style="--d:5">
+            <a class="btn btn-primary btn-lg" href="#pide-tu-web">Pide tu web <svg class="icon"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost btn-lg" href="#planes">Ver planes y precios</a>
+          </div>
+          <ul class="hero-stats anim" style="--d:6">
+            <li><strong class="num"><small>hasta</small>3<em>días</em></strong><span>para tener su web lista</span></li>
+            <li><strong class="num"><small>desde</small><span data-price-num="basico">300</span><em>€</em></strong><span>pago único, sin cuotas mensuales</span></li>
+            <li><strong class="num num-accent">0<em>€</em></strong><span>si la prueba no le convence</span></li>
+          </ul>
+        </div>
+
+        <!-- Composición decorativa: una web "construyéndose" y la tarjeta de Top1webs -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="browser">
+            <div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">www.sunegocio.es</span></div>
+            <div class="browser-body">
+              <div class="mk-nav"><span class="mk-logo"></span><span class="mk-link"></span><span class="mk-link"></span><span class="mk-link"></span><span class="mk-cta"></span></div>
+              <div class="mk-hero">
+                <div class="mk-copy">
+                  <span class="mk-line w90"></span>
+                  <span class="mk-line w65"></span>
+                  <span class="mk-line sm w85"></span>
+                  <span class="mk-line sm w60"></span>
+                  <span class="mk-btns"><span class="mk-btn"></span><span class="mk-btn ghost"></span></span>
+                </div>
+                <div class="mk-photo"><svg viewBox="0 0 100 100"><use href="#i-star"/></svg></div>
+              </div>
+              <div class="mk-cards"><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <img class="float-card" src="assets/img/tarjeta-frontal.webp" width="642" height="416" alt="" fetchpriority="high">
+          <div class="float-chip chip-ok"><span class="chip-icon"><svg class="icon"><use href="#i-check"/></svg></span><span><b>Web de prueba lista</b><small>Sin compromiso</small></span></div>
+          <div class="float-chip chip-t1"><img src="assets/img/t1-circulo.webp" width="36" height="36" alt=""><span><b>En 3 días</b><small>como máximo</small></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== LA PROPUESTA (del folleto) ===================== -->
+    <section class="section promise" aria-labelledby="promise-title">
+      <div class="container">
+        <div class="promise-box reveal">
+          <div class="promise-intro">
+            <p class="eyebrow eyebrow-light">Cómo funciona</p>
+            <h2 id="promise-title">Primero la ve. <span class="accent-light">Luego decide.</span></h2>
+            <p>Webs con un resultado muy profesional y estético, hechas rápido y a muy buen precio.</p>
+          </div>
+          <ol class="promise-steps">
+            <li>
+              <span class="step-num">01</span>
+              <div><h3>Le preparamos su web</h3><p>Diseñamos la web de su negocio como prueba, sin ningún compromiso. Lista en 3 días como máximo.</p></div>
+            </li>
+            <li>
+              <span class="step-num">02</span>
+              <div><h3>Si le gusta, es suya</h3><p>Llegamos a un acuerdo desde <span data-price="basico">300 €</span>, más los extras que quiera añadir.</p></div>
+            </li>
+            <li>
+              <span class="step-num">03</span>
+              <div><h3>Si no le convence, no pasa nada</h3><p>Nos lo dice sin problema y no le volvemos a escribir.</p></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 2. SERVICIOS Y PRECIOS ===================== -->
+    <!-- Las tarjetas y la tabla se generan desde js/config.js (planes y comparativa) -->
+    <section class="section section-alt" id="planes" aria-labelledby="planes-title">
+      <div class="container">
+        <header class="section-head center reveal">
+          <p class="eyebrow">Servicios y precios</p>
+          <h2 id="planes-title">Un precio claro, en un solo pago</h2>
+          <p>Su web se paga una sola vez: <strong>no es una suscripción</strong> y no hay cuotas mensuales. Precios ajustados gracias a un proceso ágil, no a recortar en calidad.</p>
+          <ul class="pay-chips" aria-label="Condiciones de pago">
+            <li><svg class="icon"><use href="#i-check"/></svg> Pago único</li>
+            <li><svg class="icon"><use href="#i-check"/></svg> Sin suscripción ni cuotas</li>
+            <li><svg class="icon"><use href="#i-check"/></svg> Primero la ve, sin compromiso</li>
+          </ul>
+        </header>
+
+        <div class="plans" id="plans-grid"></div>
+
+        <p class="plans-note reveal">Precios orientativos de <strong>pago único</strong>, no es una suscripción. Los extras pueden modificar el precio final y siempre se lo confirmamos antes de empezar. <span data-edit="Indique si los precios incluyen IVA"></span></p>
+
+        <div class="compare reveal">
+          <h3 id="compare-title">Compare los planes</h3>
+          <div class="table-wrap" role="region" aria-labelledby="compare-title" tabindex="0">
+            <table class="compare-table" id="compare-table"></table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 3. CÓMO TRABAJAMOS ===================== -->
+    <section class="section" id="proceso" aria-labelledby="proceso-title">
+      <div class="container">
+        <header class="section-head center reveal">
+          <p class="eyebrow">Cómo trabajamos</p>
+          <h2 id="proceso-title">De la primera llamada a su web lista, en 3 días como máximo</h2>
+          <p>Un proceso corto y sin complicaciones. Y la web de prueba se prepara <strong>sin compromiso</strong>: primero la ve y luego decide.</p>
+        </header>
+
+        <ol class="timeline" id="timeline">
+          <li class="tl-step reveal" style="--d:0">
+            <span class="tl-dot"><svg class="icon"><use href="#i-phone"/></svg></span>
+            <span class="tl-label">Paso 1</span>
+            <h3>Llamada</h3>
+            <p>Una conversación corta: nos cuenta a qué se dedica, qué necesita y qué estilo le gusta.</p>
+          </li>
+          <li class="tl-step reveal" style="--d:1">
+            <span class="tl-dot"><svg class="icon"><use href="#i-pencil"/></svg></span>
+            <span class="tl-label">Paso 2</span>
+            <h3>Diseño</h3>
+            <p>Preparamos su web de prueba, sin compromiso, con sus textos, sus fotos y sus colores.</p>
+          </li>
+          <li class="tl-step reveal" style="--d:2">
+            <span class="tl-dot"><svg class="icon"><use href="#i-sliders"/></svg></span>
+            <span class="tl-label">Paso 3</span>
+            <h3>Cambios</h3>
+            <p>La revisa con calma y nos dice qué ajustar. Hacemos los cambios para que quede como usted quiere.</p>
+          </li>
+          <li class="tl-step reveal" style="--d:3">
+            <span class="tl-dot"><svg class="icon"><use href="#i-rocket"/></svg></span>
+            <span class="tl-label">Paso 4</span>
+            <h3>Entrega</h3>
+            <p>Si le gusta, cerramos el acuerdo y la dejamos lista para publicar. Si no, no pasa nada.</p>
+          </li>
+        </ol>
+
+        <div class="cta-band reveal">
+          <svg class="cta-band-star" viewBox="0 0 100 100" aria-hidden="true"><use href="#i-star"/></svg>
+          <div>
+            <h3>¿Le preparamos su web de prueba?</h3>
+            <p>Sin compromiso. Si no le convence, no pasa nada.</p>
+          </div>
+          <div class="cta-band-actions">
+            <a class="btn btn-light" href="#pide-tu-web">Pide tu web</a>
+            <a class="btn btn-outline-light" href="https://wa.me/34691293667" data-wa><svg class="icon"><use href="#i-wa"/></svg> WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 4. CALCULADORA ===================== -->
+    <!-- Los precios de páginas, extras e idiomas se cambian en js/config.js → calculadora -->
+    <section class="section section-alt" id="calculadora" aria-labelledby="calc-title">
+      <div class="container">
+        <header class="section-head center reveal">
+          <p class="eyebrow">Calculadora de presupuesto</p>
+          <h2 id="calc-title">Calcule un precio orientativo en segundos</h2>
+          <p>Elija cuántas páginas necesita y qué extras le interesan. El precio se actualiza al instante.</p>
+        </header>
+
+        <div class="calc reveal">
+          <form class="calc-options" id="calc-form">
+            <fieldset class="calc-group">
+              <legend>Número de páginas</legend>
+              <p class="hint">La primera página está incluida en el precio base. Cada página más: <b data-calc-price="pagina">40 €</b>.</p>
+              <div class="stepper">
+                <button type="button" class="stepper-btn" data-target="calc-pages" data-step="-1" aria-label="Quitar una página">−</button>
+                <input type="number" id="calc-pages" value="1" min="1" max="10" inputmode="numeric" aria-label="Número de páginas">
+                <button type="button" class="stepper-btn" data-target="calc-pages" data-step="1" aria-label="Añadir una página">+</button>
+              </div>
+            </fieldset>
+
+            <fieldset class="calc-group">
+              <legend>Extras</legend>
+              <div class="extra-grid" id="calc-extras"></div>
+            </fieldset>
+
+            <fieldset class="calc-group">
+              <legend>Idiomas adicionales</legend>
+              <p class="hint">Además del español. Cada idioma: <b data-calc-price="idioma">60 €</b>.</p>
+              <div class="stepper">
+                <button type="button" class="stepper-btn" data-target="calc-langs" data-step="-1" aria-label="Quitar un idioma">−</button>
+                <input type="number" id="calc-langs" value="0" min="0" max="3" inputmode="numeric" aria-label="Idiomas adicionales">
+                <button type="button" class="stepper-btn" data-target="calc-langs" data-step="1" aria-label="Añadir un idioma">+</button>
+              </div>
+            </fieldset>
+          </form>
+
+          <aside class="calc-summary" aria-labelledby="calc-total-label">
+            <p class="sum-label" id="calc-total-label">Precio orientativo · pago único</p>
+            <p class="sum-total"><output id="calc-total" for="calc-pages calc-langs" aria-live="polite">300 €</output></p>
+            <ul class="sum-lines" id="calc-lines"></ul>
+            <p class="sum-tip" id="calc-tip" hidden></p>
+            <p class="sum-note"><svg class="icon"><use href="#i-info"/></svg> Es un precio orientativo. El presupuesto final se confirma después de hablar con usted.</p>
+            <button type="button" class="btn btn-light btn-block" id="calc-request">Pedir con este presupuesto</button>
+            <span data-edit="Precios de páginas y extras: propuesta editable"></span>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 5. MINI TEST ===================== -->
+    <!-- Preguntas y puntuación en js/config.js → test -->
+    <section class="section" id="test" aria-labelledby="test-title">
+      <div class="container quiz-layout">
+        <div class="quiz-intro reveal">
+          <p class="eyebrow">Mini test</p>
+          <h2 id="test-title">¿Qué web necesita?</h2>
+          <p>Cuatro preguntas rápidas y le recomendamos el plan que mejor encaja con su negocio. Sin dejar datos.</p>
+          <img class="quiz-t1" src="assets/img/t1-circulo.webp" width="96" height="96" alt="" loading="lazy" decoding="async">
+        </div>
+
+        <div class="quiz reveal" id="quiz">
+          <div class="quiz-progress">
+            <span id="quiz-step">Pregunta 1 de 4</span>
+            <div class="quiz-bar" aria-hidden="true"><i id="quiz-bar"></i></div>
+          </div>
+          <form id="quiz-form">
+            <fieldset class="quiz-fieldset">
+              <legend class="quiz-question" id="quiz-question"></legend>
+              <div class="quiz-options" id="quiz-options"></div>
+            </fieldset>
+            <div class="quiz-nav">
+              <button type="button" class="btn btn-ghost" id="quiz-back">Atrás</button>
+              <button type="submit" class="btn btn-primary" id="quiz-next" disabled>Siguiente <svg class="icon"><use href="#i-arrow"/></svg></button>
+            </div>
+          </form>
+          <div class="quiz-result" id="quiz-result" tabindex="-1" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 6. PORTAFOLIO ===================== -->
+    <!-- Para añadir un trabajo real, copie un bloque <article class="work"> y cambie imagen, textos y enlace. -->
+    <section class="section section-alt" id="portafolio" aria-labelledby="portfolio-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Portafolio</p>
+          <h2 id="portfolio-title">Trabajos y demos</h2>
+          <p>Una muestra del estilo de nuestras webs y de nuestra propia imagen de marca. <span data-edit="Añada aquí sus proyectos reales"></span></p>
+        </header>
+
+        <div class="portfolio">
+          <article class="work work-featured reveal">
+            <a class="work-media" href="https://cartayweb-design.github.io/bar-la-tasca/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="assets/img/tasca-escritorio.webp" width="1280" height="800" alt="" loading="lazy" decoding="async">
+              <img class="work-phone" src="assets/img/tasca-movil.webp" width="540" height="1169" alt="" loading="lazy" decoding="async">
+            </a>
+            <div class="work-body">
+              <span class="tag">Demo · Bar restaurante</span>
+              <h3>Bar La Tasca</h3>
+              <p>Web para un bar restaurante de Carbonero el Mayor (Segovia): un recorrido por el día, de la mañana a la noche, carta de sala y de barra, horario interactivo y reservas por WhatsApp.</p>
+              <ul class="chips"><li>Carta y menús</li><li>Horario interactivo</li><li>Reservas por WhatsApp</li></ul>
+              <a class="btn btn-primary" href="https://cartayweb-design.github.io/bar-la-tasca/" target="_blank" rel="noopener">Ver la web <svg class="icon"><use href="#i-arrow"/></svg><span class="sr-only">(se abre en una pestaña nueva)</span></a>
+            </div>
+          </article>
+
+          <article class="work reveal">
+            <button class="work-media brand-collage" type="button" data-open-gallery aria-label="Ver el material de marca de Top1webs">
+              <img class="bc-flyer" src="assets/img/folleto-frontal.webp" width="900" height="1278" alt="" loading="lazy" decoding="async">
+              <img class="bc-card bc-card-1" src="assets/img/tarjeta-frontal.webp" width="642" height="416" alt="" loading="lazy" decoding="async">
+              <img class="bc-card bc-card-2" src="assets/img/tarjeta-trasera.webp" width="642" height="416" alt="" loading="lazy" decoding="async">
+            </button>
+            <div class="work-body">
+              <span class="tag">Proyecto propio</span>
+              <h3>Identidad de Top1webs</h3>
+              <p>Logotipo, folleto, tarjetas de visita e iconos para redes: la imagen con la que presentamos nuestro trabajo.</p>
+              <button class="btn btn-ghost" type="button" data-open-gallery>Ver el material</button>
+            </div>
+          </article>
+
+          <article class="work work-cta reveal">
+            <svg class="work-cta-star" viewBox="0 0 100 100" aria-hidden="true"><use href="#i-star"/></svg>
+            <span class="tag tag-light">Su proyecto</span>
+            <h3>¿El siguiente? Su negocio.</h3>
+            <p>Le preparamos su web de prueba sin compromiso y, si le gusta, se queda con ella.</p>
+            <a class="btn btn-light" href="#pide-tu-web">Pide tu web</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 7. ANTES / DESPUÉS ===================== -->
+    <section class="section" id="antes-despues" aria-labelledby="ba-title">
+      <div class="container">
+        <header class="section-head center reveal">
+          <p class="eyebrow">Antes y después</p>
+          <h2 id="ba-title">De una web anticuada a una que trabaja para usted</h2>
+          <p>Deslice para comparar. Más clara, más rápida de leer y con los botones importantes a mano.</p>
+        </header>
+
+        <figure class="ba reveal" id="ba">
+          <!--
+            CÓMO CAMBIAR LAS IMÁGENES
+            Sustituya estos dos archivos por capturas reales (mismo tamaño, idealmente 1280 × 800 px):
+              assets/img/comparador-antes.webp
+              assets/img/comparador-despues.webp
+          -->
+          <div class="ba-frame">
+            <img class="ba-before" src="assets/img/comparador-antes.webp" width="1280" height="800" alt="Antes: ejemplo de web anticuada, recargada y con letra pequeña" loading="lazy" decoding="async">
+            <div class="ba-after">
+              <img src="assets/img/comparador-despues.webp" width="1280" height="800" alt="Después: web de Bar La Tasca, limpia y con botón de reservar" loading="lazy" decoding="async">
+            </div>
+            <span class="ba-tag ba-tag-before" aria-hidden="true">Antes</span>
+            <span class="ba-tag ba-tag-after" aria-hidden="true">Después</span>
+            <input class="ba-range" id="ba-range" type="range" min="0" max="100" value="50" step="1" aria-label="Comparar antes y después">
+            <div class="ba-handle" aria-hidden="true"><span><svg class="icon"><use href="#i-lr"/></svg></span></div>
+          </div>
+          <figcaption>A la izquierda, una web anticuada recreada como ejemplo. A la derecha, la web de <a href="https://cartayweb-design.github.io/bar-la-tasca/" target="_blank" rel="noopener">Bar La Tasca</a>.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================== 8. PREGUNTAS FRECUENTES ===================== -->
+    <!-- Respuestas redactadas de forma prudente: revíselas y ajústelas a cómo trabaja usted. -->
+    <section class="section section-alt" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-layout">
+        <div class="faq-intro reveal">
+          <p class="eyebrow">Preguntas frecuentes</p>
+          <h2 id="faq-title">Dudas habituales</h2>
+          <p>¿No encuentra la suya? Pregúntenos, sin compromiso. <span data-edit="Respuestas editables: revíselas"></span></p>
+          <div class="faq-actions">
+            <a class="btn btn-whatsapp" href="https://wa.me/34691293667" data-wa><svg class="icon"><use href="#i-wa"/></svg> WhatsApp</a>
+            <a class="btn btn-ghost" href="tel:+34691293667" data-tel><svg class="icon"><use href="#i-phone"/></svg> Llamar</a>
+          </div>
+        </div>
+
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary>¿De verdad la web de prueba no tiene compromiso?</summary>
+            <div class="faq-body"><p>Sí. Le preparamos la web de prueba y usted decide. Si le gusta, llegamos a un acuerdo; si no le convence, nos lo dice y no le volvemos a escribir.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Cuánto tardan en tener mi web lista?</summary>
+            <div class="faq-body"><p>Un máximo de 3 días desde que tenemos la información necesaria: textos, fotos y logotipo, si los tiene. Si su web lleva muchos extras, le confirmamos el plazo antes de empezar.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><span>¿Qué incluye el precio de <span data-price="basico">300 €</span>?</span></summary>
+            <div class="faq-body"><p>El plan Básico: una web de una página, adaptada al móvil, con sus datos de contacto, botones para llamar o escribir por WhatsApp y un mapa para llegar. Los extras (más páginas, formularios, reservas o idiomas) pueden cambiar el precio; siempre se lo decimos antes.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Es una suscripción? ¿Hay cuotas mensuales?</summary>
+            <div class="faq-body"><p>No. Su web se paga una sola vez: no hay suscripción ni cuotas mensuales por el diseño. Lo único que suele tener un coste anual aparte son el dominio y el alojamiento, que dependen del proveedor; se lo explicamos antes de contratar nada.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Podré cambiar yo mismo los textos o las fotos?</summary>
+            <div class="faq-body"><p>Depende de cómo se construya su web. Si quiere poder editar usted mismo textos, precios o fotos, coméntelo al principio y le explicamos qué opciones hay y qué implica cada una.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Ofrecen mantenimiento después de la entrega?</summary>
+            <div class="faq-body"><p>Si más adelante necesita cambios o ayuda, escríbanos. Le diremos qué se puede hacer y cuánto costaría antes de empezar, sin sorpresas.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Y el dominio y el alojamiento?</summary>
+            <div class="faq-body"><p>El dominio (por ejemplo, www.sunegocio.es) y el alojamiento suelen tener un coste anual aparte, que depende del proveedor. Le orientamos para elegir una opción adecuada y le explicamos los costes antes de contratar nada.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Cuánto cuestan los extras?</summary>
+            <div class="faq-body"><p>Depende de lo que necesite. Puede hacerse una idea con la <a href="#calculadora">calculadora de presupuesto</a>; el precio final se lo confirmamos después de hablar con usted.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Qué necesito para empezar?</summary>
+            <div class="faq-body"><p>Solo una llamada o un mensaje. Con el nombre de su negocio, a qué se dedica y algunas fotos (si las tiene) podemos preparar su web de prueba.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 9. FORMULARIO DE ENCARGO ===================== -->
+    <!-- Conexión del formulario: js/config.js → formulario.endpoint (ver README.md) -->
+    <section class="section" id="pide-tu-web" aria-labelledby="order-title">
+      <div class="container order-layout">
+        <div class="order-intro reveal">
+          <p class="eyebrow">Pide tu web</p>
+          <h2 id="order-title">Cuéntenos qué necesita</h2>
+          <p>Con estos datos preparamos su web de prueba. Sin compromiso: si no le convence, no pasa nada.</p>
+          <ul class="order-points">
+            <li><svg class="icon"><use href="#i-check"/></svg><span>Web de prueba sin compromiso</span></li>
+            <li><svg class="icon"><use href="#i-check"/></svg><span>Lista en un máximo de 3 días</span></li>
+            <li><svg class="icon"><use href="#i-check"/></svg><span>Desde <span data-price="basico">300 €</span>, pago único y sin cuotas</span></li>
+          </ul>
+          <p class="order-alt">¿Prefiere hablar? Llame al <a href="tel:+34691293667" data-tel><span data-tel-text>691 29 36 67</span></a> o <a href="https://wa.me/34691293667" data-wa>escríbanos por WhatsApp</a>.</p>
+        </div>
+
+        <div class="order-box reveal">
+          <form class="order-form" id="order-form" novalidate>
+            <div class="form-demo" id="form-demo" hidden>
+              <svg class="icon"><use href="#i-info"/></svg>
+              <p><strong>Formulario en modo demostración.</strong> Comprueba los datos, pero todavía no los envía. Para recibirlos en su correo, añada la dirección de su formulario en <code>js/config.js</code> (vea README.md).</p>
+            </div>
+
+            <div class="form-errors" id="form-errors" tabindex="-1" hidden></div>
+
+            <div class="field">
+              <label for="f-name">Nombre <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-name" name="nombre" type="text" autocomplete="name" required aria-describedby="f-name-err">
+              <p class="field-error" id="f-name-err"></p>
+            </div>
+
+            <div class="field">
+              <label for="f-contact">Teléfono o email <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-contact" name="contacto" type="text" autocomplete="tel" required aria-describedby="f-contact-hint f-contact-err">
+              <p class="field-hint" id="f-contact-hint">Para poder responderle.</p>
+              <p class="field-error" id="f-contact-err"></p>
+            </div>
+
+            <div class="field">
+              <label for="f-type">Tipo de negocio <span class="req" aria-hidden="true">*</span></label>
+              <select id="f-type" name="tipo_negocio" required aria-describedby="f-type-err">
+                <option value="">Elija una opción</option>
+                <option>Restauración u hostelería</option>
+                <option>Comercio o tienda</option>
+                <option>Servicios profesionales</option>
+                <option>Salud, belleza o bienestar</option>
+                <option>Construcción, reformas u oficios</option>
+                <option>Otro</option>
+              </select>
+              <p class="field-error" id="f-type-err"></p>
+            </div>
+
+            <div class="field">
+              <label for="f-plan">Plan que le interesa</label>
+              <select id="f-plan" name="plan">
+                <option value="">Aún no lo sé</option>
+              </select>
+            </div>
+
+            <div class="field field-full">
+              <label for="f-need">¿Qué necesita? <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="f-need" name="necesidad" rows="4" required minlength="10" aria-describedby="f-need-err" placeholder="Por ejemplo: una web para mi peluquería con precios, fotos y un botón para pedir cita."></textarea>
+              <p class="field-error" id="f-need-err"></p>
+            </div>
+
+            <fieldset class="field field-full budget" aria-describedby="f-budget-err">
+              <legend>Presupuesto aproximado <span class="req" aria-hidden="true">*</span></legend>
+              <div class="budget-options">
+                <label class="pill"><input type="radio" name="presupuesto" value="Hasta 300 €" required><span>Hasta 300 €</span></label>
+                <label class="pill"><input type="radio" name="presupuesto" value="300 – 500 €"><span>300 – 500 €</span></label>
+                <label class="pill"><input type="radio" name="presupuesto" value="500 – 800 €"><span>500 – 800 €</span></label>
+                <label class="pill"><input type="radio" name="presupuesto" value="Más de 800 €"><span>Más de 800 €</span></label>
+                <label class="pill"><input type="radio" name="presupuesto" value="Aún no lo sé"><span>Aún no lo sé</span></label>
+              </div>
+              <p class="field-error" id="f-budget-err"></p>
+            </fieldset>
+
+            <div class="field field-full field-check">
+              <input id="f-consent" name="consentimiento" type="checkbox" required aria-describedby="f-consent-err">
+              <label for="f-consent">Acepto que Top1webs use estos datos solo para responder a mi solicitud. <span class="req" aria-hidden="true">*</span></label>
+              <p class="field-error" id="f-consent-err"></p>
+            </div>
+
+            <!-- Campo trampa contra spam: las personas no lo ven -->
+            <div class="hp" aria-hidden="true">
+              <label for="f-web">No rellene este campo</label>
+              <input id="f-web" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="field-full form-submit">
+              <button class="btn btn-primary btn-lg btn-block" type="submit" id="order-submit">Enviar solicitud <svg class="icon"><use href="#i-arrow"/></svg></button>
+              <p class="form-legal"><span aria-hidden="true">*</span> Campos obligatorios.</p>
+            </div>
+          </form>
+
+          <div class="form-success" id="form-success" tabindex="-1" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 10. CONTACTO ===================== -->
+    <section class="contact" id="contacto" aria-labelledby="contact-title">
+      <svg class="contact-star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 63.5,33.4 95.7,37.2 71.9,59.1 78.2,90.8 50,75 21.8,90.8 28.1,59.1 4.3,37.2 36.5,33.4" fill="none" stroke="currentColor" stroke-width="5"/></svg>
+      <div class="container contact-grid">
+        <div class="reveal">
+          <h2 id="contact-title">¿Empezamos?</h2>
+          <p class="contact-lead">Llámenos o escríbanos y le preparamos su web de prueba.</p>
+          <div class="contact-links">
+            <a class="contact-link" href="tel:+34691293667" data-tel>
+              <span class="cl-icon"><svg class="icon"><use href="#i-phone"/></svg></span>
+              <span><small>Llámenos</small><strong data-tel-text>691 29 36 67</strong></span>
+            </a>
+            <a class="contact-link" href="https://wa.me/34691293667" data-wa>
+              <span class="cl-icon cl-wa"><svg class="icon"><use href="#i-wa"/></svg></span>
+              <span><small>WhatsApp</small><strong>Escríbanos ahora</strong></span>
+            </a>
+            <a class="contact-link" href="mailto:top1webs@gmail.com" data-mail>
+              <span class="cl-icon"><svg class="icon"><use href="#i-mail"/></svg></span>
+              <span><small>Email</small><strong data-mail-text>top1webs@gmail.com</strong></span>
+            </a>
+          </div>
+        </div>
+        <div class="contact-cards reveal">
+          <img class="cc-back" src="assets/img/tarjeta-trasera.webp" width="642" height="416" alt="Tarjeta de Top1webs: su web lista en 3 días por 300 €, con teléfono y email" loading="lazy" decoding="async">
+          <img class="cc-front" src="assets/img/tarjeta-frontal.webp" width="642" height="416" alt="Tarjeta de Top1webs con el logotipo" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== PIE ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo-completo-blanco.webp" width="260" height="57" alt="Top1webs · Diseño, presencia, resultados" loading="lazy" decoding="async">
+        <p>Webs a medida, profesionales y con personalidad para negocios y empresas.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <h2 class="footer-title">La web</h2>
+        <ul>
+          <li><a href="#planes">Planes y precios</a></li>
+          <li><a href="#proceso">Cómo trabajamos</a></li>
+          <li><a href="#calculadora">Calculadora</a></li>
+          <li><a href="#test">¿Qué web necesito?</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="footer-title">Contacto</h2>
+        <ul>
+          <li><a href="tel:+34691293667" data-tel><span data-tel-text>691 29 36 67</span></a></li>
+          <li><a href="mailto:top1webs@gmail.com" data-mail><span data-mail-text>top1webs@gmail.com</span></a></li>
+          <li><a href="https://wa.me/34691293667" data-wa>WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> Top1webs. Diseño · Presencia · Resultados.</p>
+      <a href="#inicio" class="to-top">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp (número en js/config.js → contacto.whatsapp) -->
+  <a class="wa-float" href="https://wa.me/34691293667" data-wa aria-label="Escríbanos por WhatsApp">
+    <svg class="icon"><use href="#i-wa"/></svg>
+    <span class="wa-float-text">¿Hablamos?</span>
+  </a>
+
+  <!-- Galería del material de marca -->
+  <dialog class="gallery" id="brand-gallery" aria-labelledby="gallery-title">
+    <div class="gallery-head">
+      <h2 id="gallery-title">Material de marca de Top1webs</h2>
+      <button class="icon-btn" type="button" data-close-dialog aria-label="Cerrar"><svg class="icon"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="gallery-grid">
+      <figure><img src="assets/img/folleto-frontal.webp" width="900" height="1278" alt="Folleto de Top1webs, cara delantera: Primero la ve. Luego decide." loading="lazy" decoding="async"><figcaption>Folleto · cara delantera</figcaption></figure>
+      <figure><img src="assets/img/folleto-trasera.webp" width="900" height="1278" alt="Folleto de Top1webs, cara trasera: así de sencillo, en tres pasos" loading="lazy" decoding="async"><figcaption>Folleto · cara trasera</figcaption></figure>
+      <figure class="wide"><img src="assets/img/tarjeta-frontal.webp" width="642" height="416" alt="Tarjeta de visita, cara delantera con el logotipo" loading="lazy" decoding="async"><figcaption>Tarjeta · delantera</figcaption></figure>
+      <figure class="wide"><img src="assets/img/tarjeta-trasera.webp" width="642" height="416" alt="Tarjeta de visita, cara trasera con contacto y código QR" loading="lazy" decoding="async"><figcaption>Tarjeta · trasera</figcaption></figure>
+      <figure class="full"><img src="assets/img/iconos-perfil.webp" width="1200" height="764" alt="Iconos de Top1webs para foto de perfil y aplicación" loading="lazy" decoding="async"><figcaption>Iconos para redes y aplicaciones</figcaption></figure>
+    </div>
+  </dialog>
+</body>
+</html>
